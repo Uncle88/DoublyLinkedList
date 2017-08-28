@@ -67,7 +67,11 @@ namespace DoublyLinkedList
             }
             return false;
         }
+
+        public int Count { get { return count; }}
  
+
+
         public IEnumerator<T> GetEnumerator()
         {
             throw new NotImplementedException();

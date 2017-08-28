@@ -29,7 +29,7 @@ namespace DoublyLinkedList
             DoulbyUnit<T> actual = head;
             DoulbyUnit<T> prior = null;
 
-            //search element for delete
+            //search element for delete - method Contains
             while (actual != null)
             {
                 if (actual.Data.Equals(data))
@@ -78,6 +78,18 @@ namespace DoublyLinkedList
                     return true;
                 return false;
             }
+        }
+
+        public bool Contains (T data)
+        {
+            DoulbyUnit<T> actual = head;
+            while (actual != null)
+            {
+                if (actual.Data.Equals(data))
+                    return true;
+                actual = actual.Next;
+            }
+            return false;
         }
 
         public void Clear()

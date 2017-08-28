@@ -70,7 +70,15 @@ namespace DoublyLinkedList
 
         public int Count { get { return count; }}
  
-
+        public bool IsEmpty
+        {
+            get
+            {
+                if (count == 0)
+                    return true;
+                return false;
+            }
+        }
 
         public IEnumerator<T> GetEnumerator()
         {

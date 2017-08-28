@@ -99,7 +99,8 @@ namespace DoublyLinkedList
             count = 0;
         }
 
-        public IEnumerator<T> GetEnumerator()
+		//way in one side
+		public IEnumerator<T> GetEnumerator()
         {
             DoulbyUnit<T> actual = head;
             while (actual != null)
@@ -109,7 +110,8 @@ namespace DoublyLinkedList
             }
         }
 
-        public IEnumerator<T> BackEnumerator()
+		//way in other side
+		public IEnumerator<T> BackEnumerator()
         {
             DoulbyUnit<T> actual = tail;
             while (actual != null)

@@ -80,6 +80,13 @@ namespace DoublyLinkedList
             }
         }
 
+        public void Clear()
+        {
+            head = null;
+            tail = null;
+            count = 0;
+        }
+
         public IEnumerator<T> GetEnumerator()
         {
             throw new NotImplementedException();

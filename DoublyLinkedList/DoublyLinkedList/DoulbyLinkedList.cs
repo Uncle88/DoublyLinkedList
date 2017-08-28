@@ -24,6 +24,19 @@ namespace DoublyLinkedList
             count++;
         }
 
+        public void AddFirst(T data)
+        {
+            DoulbyUnit<T> _unit = new DoulbyUnit<T>(data);
+            DoulbyUnit<T> temp = head;
+            _unit.Next = temp;
+            head = _unit;
+            if (count == 0)
+                tail = head;
+            else
+                temp.Previous = _unit;
+            count++;
+        }
+
         public bool Remove(T data)
         {
             DoulbyUnit<T> actual = head;

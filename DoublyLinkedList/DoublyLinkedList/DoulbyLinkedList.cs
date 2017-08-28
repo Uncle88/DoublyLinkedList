@@ -101,12 +101,27 @@ namespace DoublyLinkedList
 
         public IEnumerator<T> GetEnumerator()
         {
-            throw new NotImplementedException();
+            DoulbyUnit<T> actual = head;
+            while (actual != null)
+            {
+                yield return actual.Data;
+                actual = actual.Next;
+            }
+        }
+
+        public IEnumerator<T> BackEnumerator()
+        {
+            DoulbyUnit<T> actual = tail;
+            while (actual != null)
+            {
+                yield return actual.Data;
+                actual = actual.Previous;
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return GetEnumerator();
         }
     }
 }

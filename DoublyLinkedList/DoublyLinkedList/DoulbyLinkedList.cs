@@ -23,6 +23,50 @@ namespace DoublyLinkedList
             tail = _doulbyUnit;
             count++;
         }
+
+        public bool Remove(T data)
+        {
+            DoulbyUnit<T> actual = head;
+            DoulbyUnit<T> prior = null;
+
+            //search element for delete
+            while (actual != null)
+            {
+                if (actual.Data.Equals(data))
+                {
+                    break;
+                }
+                actual = actual.Next;
+            }
+            if (actual != null)
+            {
+                //if element not last
+                if (actual.Next != null)
+                {
+                    actual.Next.Previous = actual.Previous;
+                }
+                else
+                {
+                    //if element last
+                    tail = actual.Previous;
+                }
+
+                //if element not first
+                if (actual.Previous != null)
+                {
+                    actual.Previous.Next = actual.Next;
+                }
+                else
+                {
+                    //if - first
+                    head = actual.Next;
+                }
+
+                count--;
+                return true;
+            }
+            return false;
+        }
  
         public IEnumerator<T> GetEnumerator()
         {

@@ -6,8 +6,8 @@ namespace DoublyLinkedList
 {
     public class DoulbyLinkedList<T> : IEnumerable<T>
     {
-        public DoulbyUnit<T> head;
-        public DoulbyUnit<T> tail;
+        DoulbyUnit<T> head;
+        DoulbyUnit<T> tail;
         int count;
 
         public void Add(T data)
